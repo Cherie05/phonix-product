@@ -19,6 +19,14 @@ defmodule ShopWeb.Endpoint do
   #
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
+
+  plug Plug.Static,
+  at: "/kaffy",    # must end in "/kaffy"
+  from: :kaffy,    # serves assets from the Kaffy package
+  gzip: false,
+  only: ~w(assets)
+
+  
   plug Plug.Static,
     at: "/",
     from: :shop,

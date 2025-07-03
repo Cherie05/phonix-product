@@ -7,6 +7,16 @@
 # General application configuration
 import Config
 
+config :kaffy,
+  otp_app: :shop,                 # your OTP app name
+  ecto_repo: Shop.Repo,           # your Repo module
+  router: ShopWeb.Router,         # your Phoenix router module
+
+  # optional branding
+  admin_title: "Shop Admin",
+  admin_footer: "© #{Date.utc_today().year} Shop"
+
+  
 config :shop,
   ecto_repos: [Shop.Repo],
   generators: [timestamp_type: :utc_datetime]

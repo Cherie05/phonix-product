@@ -14,6 +14,13 @@ defmodule ShopWeb.Router do
     plug :accepts, ["json"]
   end
 
+
+  # this macro generates all /admin routes for your schemas
+  use Kaffy.Routes,
+      scope: "/admin",                # URL prefix
+      pipe_through: [:browser]        # add your auth plugs here if desired
+
+      
   scope "/", ShopWeb do
     pipe_through :browser
 

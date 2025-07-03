@@ -21,13 +21,15 @@ defmodule ShopWeb do
 
   def router do
     quote do
-      use Phoenix.Router, helpers: false
+     
+      use Phoenix.Router, helpers: true   # ← enable the Router.Helpers module
+
 
       # Import common connection and controller functions to use in pipelines
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
-      
+
     end
   end
 
